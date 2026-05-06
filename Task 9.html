@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day 9 - DOM Practice</title>
+</head>
+<body>
+
+    <h1 id="myHeading">Hello World</h1>
+    <p id="myText">This is a paragraph</p>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="hideText()">Hide Text</button>
+    <button onclick="showText()">Show Text</button>
+
+    <br><br>
+
+    <input type="text" id="myInput" placeholder="type something" />
+    <button onclick="showInput()">Show</button>
+    <p id="result"></p>
+
+    <script>
+        function changeText(){
+            document.getElementById("myHeading").innerText = "Text Changed!"
+        }
+
+        function changeColor(){
+            document.getElementById("myText").style.color = "red"
+        }
+
+        function hideText(){
+            document.getElementById("myText").style.display = "none"
+        }
+
+        
+        function showText(){
+            document.getElementById("myText").style.display = "block"
+        }
+
+        function showInput(){
+            let val = document.getElementById("myInput").value
+            document.getElementById("result").innerText = val
+        }
+
+    </script>
+
+</body>
+</html>
