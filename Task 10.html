@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day 10 - DOM Events Practice</title>
+</head>
+<body>
+
+    <h1>Day 10 - Events Practice</h1>
+
+    <h2>Click Event</h2>
+    <button id="myBtn">Click Me</button>
+    <p id="clickResult"></p>
+
+    <h2>Mouseover Event</h2>
+    <p id="hoverText">Hover over me!</p>
+
+    <h2>Keypress Event</h2>
+    <input type="text" id="myInput" placeholder="type anything"/>
+    <p id="keyResult"></p>
+
+    <h2>Change Event (dropdown)</h2>
+    <select id="mySelect">
+        <option value="">-- select --</option>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+    </select>
+    <p id="selectResult"></p>
+
+    <h2>Double Click Event</h2>
+    <p id="dblText">Double click on this text</p>
+
+    <script>
+
+        document.getElementById("myBtn").addEventListener("click", function(){
+            document.getElementById("clickResult").innerText = "button was clicked!"
+        })
+
+       
+        document.getElementById("hoverText").addEventListener("mouseover", function(){
+            document.getElementById("hoverText").style.color = "blue"
+        })
+
+        document.getElementById("hoverText").addEventListener("mouseout", function(){
+            document.getElementById("hoverText").style.color = "black"
+        })
+
+        document.getElementById("myInput").addEventListener("keyup", function(){
+            let val = document.getElementById("myInput").value
+            document.getElementById("keyResult").innerText = "you typed: " + val
+        })
+
+        document.getElementById("mySelect").addEventListener("change", function(){
+            let selected = document.getElementById("mySelect").value
+            document.getElementById("selectResult").innerText = "you selected: " + selected
+        })
+
+        document.getElementById("dblText").addEventListener("dblclick", function(){
+            document.getElementById("dblText").innerText = "you double clicked!"
+        })
+
+    </script>
+
+</body>
+</html>
